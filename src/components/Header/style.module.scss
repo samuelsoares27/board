@@ -3,10 +3,10 @@
     background-color: #141a29;
 }
 
-.divContainer {
+.headerContent {
     max-width: 1120px;
     height: 6rem;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     align-items: center;
 
@@ -17,22 +17,23 @@
     nav {
         margin-left: 5rem;
         height: 5rem;
-    }
 
-    a {
-        display: inline-block;
-        position: relative;
-        padding: 0 0.5rem;
-        height: 5rem;
-        line-height: 5rem;
-        color: #FFF;
+        a {
+            display: inline-block;
+            position: relative;
+            padding: 0 0.5rem;
+            height: 5rem;
+            line-height: 5rem;
+            color: #FFF;
 
-        &+a {
-            margin-left: 2rem;
+            &+a {
+                margin-left: 2rem;
+            }
         }
     }
 
     button {
         margin-left: auto;
     }
+
 }

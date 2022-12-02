@@ -1,7 +1,12 @@
 
+import { FiPlus, FiCalendar, FiEdit2, FiTrash, FiClock } from 'react-icons/fi'
+import { GetServerSideProps } from 'next';
+import { getSession } from 'next-auth/react';
 import styles from './styles.module.scss';
 import Head from 'next/head';
-import { FiPlus, FiCalendar, FiEdit2, FiTrash, FiClock } from 'react-icons/fi'
+import SupportButton from '../../components/SupportButton';
+
+
 
 export default function Board() {
     return (
@@ -56,6 +61,30 @@ export default function Board() {
                     </time>
                 </div>
             </div>
+
+            <SupportButton />
         </>
     )
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+
+    const session = await getSession({ req });
+
+    if (!session?.user) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
+
+    console.log(session);
+
+    return {
+        props: {
+
+        }
+    }
 }
